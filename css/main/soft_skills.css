@@ -277,9 +277,15 @@
         flex-direction: column;
         align-items: center;
     }
+
     .soft_skills > .container > h3{
         margin-bottom: 30px;
     }
+
+    .btn_soft {
+        top: -50px;
+    }
+
     .soft_skills{
         height: 500px;
     }
