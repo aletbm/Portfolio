@@ -1,0 +1,336 @@
+.contacto{
+    color: var(--color1);
+    background-color: var(--color4);
+    padding: 50px 0;
+}
+
+.contacto > .container{
+    display: flex;
+    height: max-content;
+}
+
+
+.contacto_animacion{
+    background: rgb(1, 192, 255);
+    overflow: hidden;
+    flex-basis: 400px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.contacto_animacion > img{
+    position: absolute;
+    margin: 0 auto;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100px;
+    z-index: 30;
+    animation: sendMessage 3s infinite forwards linear alternate;
+}
+
+@keyframes sendMessage {
+    0%{
+        transform: rotate(0deg) translateY(0px) scale(1);
+    }
+    25%{
+        transform: rotate(2deg) translateY(-5px) scale(1.1);
+    }
+    50%{
+        transform: rotate(-2deg) translateY(5px) scale(0.9);
+    }
+    75%{
+        transform: rotate(2deg) translateY(0px) scale(1.1);
+    }
+    100%{
+        transform: rotate(0deg) translateX(0px) translateY(0px) scale(1); 
+    }
+}
+
+.contacto_animacion_ciudad{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    animation: slideCity 3s linear forwards;
+}
+
+.contacto_animacion_ciudad2{
+    transform: translateX(400px);
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    z-index: 15;
+    animation: slideCity2 6s linear forwards infinite;
+}
+
+.contacto_animacion_ciudad3{
+    transform: translateX(400px);
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+    animation: slideCity2 6s 3s linear forwards infinite;
+}
+
+.ciudad_img{
+    width: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes slideCity {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-400px);
+    }
+}
+
+@keyframes slideCity2 {
+    0%{
+        transform: translateX(400px);
+    }
+    100%{
+        transform: translateX(-400px);
+    }
+}
+
+.pavimento{
+    width: 400px;
+    height: 5px;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    z-index: 25;
+}
+
+.clouds{
+    transform: translateX(400px);
+    width: 400px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    animation: slideCloud 30s linear infinite;
+}
+
+@keyframes slideCloud {
+    0%{
+        transform: translateX(400px);
+    }
+    100%{
+        transform: translateX(-400px);
+    }
+}
+
+.clouds > img{
+    position: absolute;
+    width: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.clouds > img:last-child{
+    top: 40px;
+    right: 150px;
+}
+
+.contacto_message{
+    flex-basis: calc(100% - 400px);
+    background-color: var(--color5);
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    border-left: 2px solid var(--color1);
+    padding: 20px 20px 20px 20px;
+    height: calc(100% - 40px);
+}
+
+.contacto_message > h3{
+    display: inline-block;
+    width: min-content;
+    border-bottom: 2px solid var(--color1);
+    margin-bottom: 10px;
+}
+
+.contacto_message > p{
+    margin-bottom: 10px;
+}
+
+.contacto_message > form{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    height: 100%;
+}
+
+.input_container{
+    font-family: var(--font1);
+    font-weight: 400;
+    margin-bottom: 10px;
+    position: relative;
+    height: min-content;
+}
+
+.input_container > input{
+    color: var(--color3);
+    width: calc(100% - 30px);
+    border: none;
+    padding: 20px 10px 8px 10px;
+}
+
+.input_container > textarea{
+    resize: none;
+    color: var(--color3);
+    width: calc(100% - 30px);
+    border: none;
+    height: calc(100% - 28px);
+    padding: 20px 10px 8px 10px;
+}
+
+.input_container > textarea:focus{
+    outline: none;
+    border-bottom: 2px solid var(--color3);
+    border-radius: 5px 5px 0 0;
+    transition: border-radius 0.5s linear;
+}
+
+.input_container > input:focus{
+    outline: none;
+    border-bottom: 2px solid var(--color3);
+    border-radius: 5px 5px 0 0;
+    transition: border-radius 0.5s linear;
+}
+
+.input_container > input:focus + label{
+    color: var(--color3);
+    transform: translateY(-15px) scale(0.75);
+}
+
+
+.upLabel{
+    color: var(--color3);
+    transform: translateY(-15px) scale(0.75);
+}
+
+.upLabel_textarea{
+    color: var(--color3);
+    transform: translateY(-28px) scale(0.75);
+}
+
+.input_container > textarea:focus + label{
+    color: var(--color3);
+    transform: translateY(-28px) scale(0.75);
+}
+
+.input_container > label{
+    user-select: none;
+    color: #888;
+    font-family: var(--font1);
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top:20%;
+    left: 0;
+    padding: 8px 8px 8px 8px;
+}
+
+#textarea_{
+    height: 110px;
+}
+
+#btnsend{
+    font-family: var(--font1);
+    width: 100px;
+    background-color: var(--color5);
+    border: 1px solid var(--color3);
+    color: var(--color3);
+    padding: 5px;
+}
+
+#btnsend:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+#btnsend:focus{
+    border-color: var(--color1);
+    border-radius: 10px;
+    transform: scale(1.1);
+    background-color: var(--color1);
+    color: var(--color5);
+    transition: transform 0.2s, border-radius 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#btnsend:disabled{
+    border-color: #888;
+    color: #888;
+}
+
+.dialog[open]{
+    display: flex;
+    font-family: var(--font1);
+    border-radius: 10px;
+    border: 1px solid var(--color3);
+    background-color: var(--color5);
+    top:10px;
+    align-items: center;
+    z-index: 200;
+}
+
+.dialog[open] > p{
+    color: var(--color1);
+    margin-left: 10px;
+}
+.dialog[open] > input{
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--color3);
+    color: #fff;
+    transform: scale(1);
+    transition: transform 0.2s; 
+}
+
+.dialog[open] > input:hover{
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1000px) {
+    .contacto_animacion {
+        flex-basis: 200px;
+    }
+
+    .contacto_message{
+        flex-basis: calc(100% - 200px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contacto_animacion {
+        flex-basis: 150px;
+    }
+
+    .contacto_message{
+        flex-basis: calc(100% - 150px);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contacto > .container{
+        flex-direction: column-reverse;
+    }
+
+    .contacto_message{
+        border: none;
+    }
+
+    .contacto_animacion{
+        flex-basis: 300px;
+        margin-right: 0;
+    }
+    
+}

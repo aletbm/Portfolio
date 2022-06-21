@@ -1,0 +1,260 @@
+.headerPort{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: var(--color1);
+    background-color: var(--color5);
+    position: fixed;
+    z-index: 100;
+    opacity: 0.95;
+}
+
+.headerPort > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font1);
+    overflow: inherit;
+}
+
+.headerPort_logo{
+    display: flex;
+    align-items: center;
+}
+
+.headerPort_logo_img{
+    margin-right: 10px;
+}
+
+.headerPort_logo_img > a > img{
+    display: block;
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 40px;
+    border: 2px solid var(--color3);
+}
+
+.headerPort_logo > p{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    border-right: 0.15em solid #777;
+    border-color: transparent;
+    animation: tipeo 4s steps(21) 1 normal both, blink 1s steps(1) 3;
+}
+
+@keyframes tipeo{
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+      border-color: var(--color3);
+    }
+}
+
+.headerPort_nav{
+    margin: 0 20px;
+    flex-basis: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerPort_nav_link{
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.headerPort_nav_link:link{
+    text-decoration: none;
+    color: var(--color1);
+}
+
+.headerPort_nav_link:visited{
+    text-decoration: none;
+    color: var(--color1);
+}
+
+.headerPort_nav_link:hover{
+    animation: navLink 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navLink{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.headerPort_nav_link_border{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid var(--color3);
+    padding: 5px 5px 0 5px;
+    left: -5px;
+    top: -5px;
+}
+
+
+.headerPort_nav_link:hover .headerPort_nav_link_border{
+    animation: initBorder 0.3s, loopBorder 0.2s 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes initBorder {
+    0%{
+        width: 100%;
+    }
+    50%{
+        padding: 5px 0 0 0;
+        width: 3%;
+        height: 100%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
+    }
+    
+}
+
+@keyframes loopBorder {
+    0%{
+        border: 1px solid var(--color3);
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        padding: 5px 5px 0 5px;
+        border: 1px solid var(--color3);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.escritorio{
+    display: inherit;
+}
+
+.mobile{
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+    .headerPort > .container{
+        position: relative;
+    }
+    
+    .escritorio{
+        display: none;
+    }
+
+    .visible_mobile{
+        display: block;
+        animation: opacidad 0.3s;
+    }
+    
+    .mobile{
+        opacity: 0.9;
+        background-color: var(--color5);
+        position: absolute;
+        top:50px;
+        left: -10%;
+        width: 120%;
+        z-index: 100;
+    }
+
+    .headerPort_nav{
+        height: 400px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .headerPort_nav_link{
+        width: max-content;
+    }
+
+    .menu_mobile{
+        height: 20px;
+        width: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .line{
+        background-color: var(--color1);
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+    }
+
+    .line:nth-child(3){
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: var(--color1);
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+    }
+
+    .rotate45deg{
+        animation: rotar45 0.3s 0.3s linear forwards;
+    }
+
+    .rotate135deg{
+        animation: rotar135 0.3s 0.3s linear forwards;
+    }
+
+    .EncogerLineFirst{
+        animation: encoger 0.3s linear forwards;
+    }
+
+    .EncogerLineLast{
+        animation: encoger 0.3s  linear forwards;
+    }
+
+    @keyframes encoger {
+        0%{
+            width: 100%;
+        }
+
+        100%{
+            width: 0%;
+        }
+    }
+
+    @keyframes rotar45 {
+        0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes rotar135 {
+        0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(-45deg);
+        }
+    }
+}

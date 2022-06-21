@@ -1,0 +1,225 @@
+.formacion{
+    background: var(--color5);
+    padding: 50px 0;
+}
+
+.formacion > .container > h3{
+    color: var(--color1);
+    border-bottom: 2px solid var(--color1);
+    display: inline-block;
+}
+
+.formacion_set_cards{
+    background-color: var(--color4);
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color5);
+    padding: 40px;
+    position: relative;
+    height: 280px;
+}
+
+.formacion_tres_card{
+    opacity: 0;
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formacion_next{
+    color: var(--color1);
+    font-weight: 200;
+    font-size: 50px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.formacion_next:hover{
+    cursor: pointer;
+    animation: next 0.8s forwards infinite;
+}
+
+@keyframes next{
+    0%{
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+    80%{
+        opacity: 0;
+        transform: scale(1.2) translateX(10px);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.2) translateX(0px);
+    }
+}
+
+.formacion_prev{
+    color: var(--color1);
+    font-weight: 200;
+    font-size: 50px;
+    margin-right: 10px;
+    user-select: none;
+}
+
+.formacion_prev:hover{
+    cursor: pointer;
+    animation: prev 0.8s forwards infinite;
+}
+
+@keyframes prev {
+    0%{
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+    80%{
+        opacity: 0;
+        transform: scale(1.2) translateX(-10px);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.2) translateX(0px);
+    }
+}
+
+.formacion_card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color1);
+    flex-basis: 33%;
+    margin: 0 10px;
+    box-shadow: 0 0 10px var(--color5);
+    padding-bottom: 8px;
+}
+
+.deslizar_in{
+    opacity: 1;
+    transition: opacity 0.8s linear;
+}
+
+.deslizar_out_next{
+    transform: translateX(2000px);
+    opacity: 0;
+    transition: transform 0.8s linear, opacity 0.4s linear;
+}
+
+.deslizar_out_prev{
+    transform: translateX(-2000px);
+    opacity: 0;
+    transition: transform 0.8s linear, opacity 0.4s linear;
+}
+
+.dance{
+    animation: initdance 0.4s forwards, dancing 0.8s 0.4s infinite alternate forwards ease-in-out;
+}
+
+@keyframes initdance {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+    
+}
+
+@keyframes dancing {
+    0%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(-1deg);
+    }
+}
+
+.formacion_card_text{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.formacion_card_text > h6{
+    font-family: var(--font1);
+    padding: 8px 6px 3px 8px;
+}
+
+.formacion_card_text > p{
+    font-family: var(--font1);
+    font-size: 12px;
+    padding: 8px 8px 0 8px;
+}
+
+.formacion_card > img{
+    height: 130px;
+    background-color: #FFF;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 750px) {
+    .formacion_tres_card{
+        margin: auto;
+        flex-direction: column;
+        height: calc(100% - 40px);
+        width: calc(70% - 20px);
+        bottom: 0;
+        top: 0;
+    }
+
+    .formacion_card{
+        flex-direction: row;
+        height: 32%;
+        width: 100%;
+        flex-basis: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .formacion_card > img{
+        height: 100%;
+        flex-basis: 50%;
+        overflow: hidden;
+    }
+
+    .formacion_card_text{
+        flex-basis: 50%;
+    }
+
+    .formacion_card_text > p{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formacion > .container{
+        text-align: center;
+    }
+
+    .formacion_set_cards{
+        text-align: start;
+        padding: 20px;
+    }
+
+    .formacion_card{
+        height: 30%;
+    }
+
+    .formacion_card > img{
+        height: 100%;
+        flex-basis: 30%;
+        overflow: hidden;
+    }
+
+    .formacion_card_text{
+        flex-basis: 70%;
+    }
+}

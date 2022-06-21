@@ -1,0 +1,282 @@
+.welcome > .container{
+    padding-top: 150px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.welcome_text{
+    padding: 0 20px;
+    flex-basis: 50%;
+    color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome_text > h1{
+    transform: skew(-10deg);
+    border-radius: 3px;
+    text-align: center;
+    width: 90%;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(90deg,var(--color4) 0%,  var(--color3) 30%, var(--color4) 100%);
+    animation: slideHideH1 4s forwards, opacidad 6s;
+}
+
+.welcome_text > h3{
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 300;
+    animation: opacidad 6s;
+}
+
+.welcome_text > p{
+    padding-bottom: 30px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideHideP 6s, opacidad 6s;
+}
+
+@keyframes slideHideH1 {
+    from{
+        width: 0;
+    }
+    to{
+        width: 90%;
+    }
+}
+
+@keyframes slideHideP {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.welcome_nav{
+    opacity: 0;
+    padding: 0 0 10px 0;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    animation: opacidad 4.5s 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.welcome_nav_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid var(--color1);
+}
+
+.welcome_nav_link_bg{
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.welcome_nav_link:hover{
+    transform: scale(1.1);
+    animation: miniRotation 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes miniRotation {
+    0%{ 
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.welcome_nav_link:hover:first-child{
+    opacity: 1;
+    border-color: var(--color4);
+    box-shadow: 0 0 5px #1077ff;
+}
+
+.welcome_nav_link:hover:nth-child(2){
+    box-shadow: 0 0 5px #FFF;
+}
+
+.welcome_nav_link:hover:last-child{
+    border-color: #A02D76;
+    box-shadow: 0 0 5px #ee42af;
+}
+
+.linkedin{
+    background-color: var(--color4);
+}
+
+.github{
+    background-color: #FFF;
+}
+
+.instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.welcome_nav_link:hover .welcome_nav_link_bg{
+    opacity: 1;
+    animation: changeColorLink 0.2s forwards;
+    width: 34px;
+    height: 34px;
+}
+
+@keyframes changeColorLink{
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+.blob{
+    margin-right: 20px;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
+    background-size: 500% 400%;
+    background: #08001F;
+    box-shadow: 0 0 20px #02002c;
+    animation: blobber var(--time) 0s linear infinite, cobler var(--time) 0s linear infinite alternate;
+}
+
+.blob::after{
+    border: 3px solid #0801e122;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("/img/myphoto.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -140px;
+    animation:
+        blobber var(--time) 0s ease-in-out infinite,
+        wobbler 15s 0s linear infinite alternate;
+}
+
+@keyframes blobber {
+    0%  { border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%; }
+    5%  { border-radius: 48% 52% 41% 59% / 66% 37% 63% 34%; }
+    10% { border-radius: 69% 31% 71% 29% / 67% 31% 69% 33%; }
+    15% { border-radius: 60% 40% 71% 29% / 63% 65% 35% 37%; }
+    20% { border-radius: 61% 39% 51% 49% / 57% 58% 42% 43%; }
+    25% { border-radius: 66% 34% 25% 75% / 47% 30% 70% 53%; }
+    30% { border-radius: 32% 68% 38% 62% / 65% 60% 40% 35%; }
+    35% { border-radius: 63% 37% 41% 59% / 35% 38% 62% 65%; }
+    40% { border-radius: 57% 43% 49% 51% / 55% 71% 29% 45%; }
+    45% { border-radius: 47% 53% 34% 66% / 65% 36% 64% 35%; }
+    50% { border-radius: 44% 56% 32% 68% / 69% 26% 74% 31%; }
+    55% { border-radius: 28% 72% 37% 63% / 71% 44% 56% 29%; }    
+    60% { border-radius: 38% 62% 35% 65% / 74% 53% 47% 26%; }
+    65% { border-radius: 73% 27% 46% 54% / 54% 47% 53% 46%; }
+    70% { border-radius: 75% 25% 47% 53% / 49% 53% 47% 51%; }
+    75% { border-radius: 62% 38% 43% 57% / 55% 60% 40% 45%; }
+    80% { border-radius: 41% 59% 65% 35% / 73% 50% 50% 27%; }
+    85% { border-radius: 55% 45% 57% 43% / 73% 61% 39% 27%; }
+    90% { border-radius: 74% 26% 33% 67% / 40% 65% 35% 60%; }
+    95% { border-radius: 58% 42% 57% 43% / 53% 45% 55% 47%; }
+    100%{ border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%; }
+}
+
+@keyframes cobler {
+	0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+@keyframes wobbler {
+    0%  {
+        transform: rotateZ(8deg);
+    }
+    100% {
+        transform: rotateZ(-8deg);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .welcome_text > h3 {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .welcome > .container{
+        flex-direction: column-reverse;
+        padding-top: 80px;
+    }
+
+    .welcome_text {
+        margin-top: 20px;
+    }
+
+    .welcome_text > h1{
+        margin: 0 20px;
+    }
+
+    .welcome_text > h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .welcome_text > p{
+        text-align: center;
+    }
+
+    .welcome_nav{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome_nav_link{
+        margin: 0 10px;
+    }
+
+    .blob{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .blob{
+        width: 250px;
+        height: 250px;
+    }
+}

@@ -1,0 +1,68 @@
+.sobreMi{
+    height: max-content;
+    background-color: var(--color5);
+    padding: 50px 0 20px 0;
+}
+
+.sobreMi > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sobreMi_title{
+    width: max-content;
+    color: var(--color3);
+    border-bottom: 2px solid var(--color3);
+    margin: 0;
+}
+
+.sobreMi_text{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.sobreMi_p{
+    margin-left: 20px;
+    color: var(--color1);
+    text-align: center;
+}
+
+.reveal{
+    position: relative;
+    transform: translateX(-800px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+  
+.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sobreMi_icon > img{
+    width: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .sobreMi_icon > img{
+        width: 175px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sobreMi > .container{
+        align-items: center;
+    }
+    .sobreMi_text{
+        flex-direction: column-reverse;
+    }
+    .sobreMi_p{
+        margin: 0;
+    }
+}
