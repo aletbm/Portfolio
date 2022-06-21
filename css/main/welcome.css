@@ -280,4 +280,7 @@
         width: 250px;
         height: 250px;
     }
+    .blob::after{
+        background-position: -100px;
+    }
 }
