@@ -160,10 +160,10 @@
 
 .blob{
     margin-right: 20px;
+    margin-bottom: 20px;
     position: relative;
     width: 350px;
     height: 350px;
-    overflow: hidden;
     border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
     background-size: 500% 400%;
     background: #08001F;
