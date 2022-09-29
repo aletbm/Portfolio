@@ -144,7 +144,6 @@ function activarProyecto(a){
   let proyecto_activo = document.getElementsByClassName("proyecto_activo")
   let proyecto = document.getElementsByClassName("proyecto_info_preview")
   proyecto_activo[0].classList.remove("proyecto_activo")
-  console.log(proyecto[a])
   proyecto[a].classList.add("proyecto_activo")
 }
 

@@ -218,27 +218,7 @@
     display: initial;
 }
 
-@media screen and (max-width: 500px) {
-    .proyectos > .container > h3{
-        align-self: center;
-    }
-
-    .preview_text{
-        background: radial-gradient(800px at 100% 100%, rgba(13,13,13,1) 0%, rgba(13,13,13,0.9) 30%, rgba(13,13,13,0) 80%);
-    }
-
-    .preview_text > h5{
-        margin: 20px 10px 0 30px;
-    }
-
-    .preview_text > p {
-        margin: 10px 10px 0 30px;
-    }
-
-    .preview_text_btns {
-        margin: 10px 10px 10px 30px;
-    }
-
+@media screen and (max-width: 800px) {
     .proyectos_nav{
         flex-wrap: wrap;
     }
@@ -263,6 +243,54 @@
 
     .proyecto_btn:nth-child(4){
         border-left: none;
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(5){
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(6){
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(7){
+        border-left: none;
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(8){
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(9){
+        border-bottom: 1px solid var(--color1);
+    }
+
+    .proyecto_btn:nth-child(10){
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .proyectos > .container > h3{
+        align-self: center;
+    }
+
+    .preview_text{
+        background: radial-gradient(800px at 100% 100%, rgba(13,13,13,1) 0%, rgba(13,13,13,0.9) 30%, rgba(13,13,13,0) 80%);
+    }
+
+    .preview_text > h5{
+        margin: 20px 10px 0 30px;
+    }
+
+    .preview_text > p {
+        margin: 10px 10px 0 30px;
+    }
+
+    .preview_text_btns {
+        margin: 10px 10px 10px 30px;
     }
 
     p {
@@ -291,6 +319,9 @@
         padding-bottom: 10px;
         height: 100px;
     }
+    .proyecto_btn_content > img {
+        width: 25px;
+    }
 
     .proyecto_btn:nth-child(1){
         border-bottom: 1px solid var(--color1);
@@ -311,5 +342,14 @@
 
     .proyecto_btn:nth-child(5){
         border-left: none;
+    }
+
+    .proyecto_btn:nth-child(9){
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .proyecto_btn:nth-child(10){
+        border-left: 1px solid var(--color1);
     }
 }
